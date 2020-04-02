@@ -4,7 +4,6 @@ module.exports = {
     es6: true,
   },
   extends: [
-    'plugin:react/recommended',
     'airbnb',
     'prettier',
     'prettier/react'
@@ -12,6 +11,7 @@ module.exports = {
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
+    __DEV__: true,
   },
   parser: 'babel-eslint',
   parserOptions: {
@@ -27,12 +27,9 @@ module.exports = {
   ],
   rules: {
     'prettier/prettier': 'error',
+    'react/jsx-filename-extension': ['error',{ extensions: ['.jsx','.js']}],
+    'import/prefer-default-export': 'off',
     'react/state-in-constructor': [1, 'never'],
     'react/static-property-placement': [1],
-    'react/jsx-filename-extension': [
-      'warn',
-      { extensions: ['.jsx','.js']}
-    ],
-    'import/prefer-default-export': 'off'
   },
 };
